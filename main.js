@@ -14,10 +14,8 @@ function question1 () {
       sum = sum + data[i].price ;
   }
   let average = sum / data.length
-  return "The average is $" + average.toFixed(2)
-  // Answer:
+  console.log("The average is $" + average.toFixed(2));
 }
-console.log(question1())
 
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD ---FYI for question #2 in the weekly project, I’ve just confirmed with @gavin that you don’t need to consider the `currency_code` even though it appears that you probably should given that the question implies USD
@@ -26,20 +24,13 @@ function question2 () {
   for (let i = 0; i < data.length; i++) {
     let prices = data[i].price
     let title = data[i].title
-    if (prices >= 14.00 && prices <= 18.00)  {
+    if ((prices >= 14.00) && (prices <= 18.00))  {
       cheap.push(title)
     }
 
   }
-    return cheap
+    console.log(cheap)
 }
-
-console.log(question2())
-
-
-  // Answer:
-
-// if price is 14 < 18, print title
 
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
@@ -53,24 +44,40 @@ function question3 () {
       gbp.push(title + " cost " + prices + " pounds")
     }
   }
-    return gbp
+    console.log(gbp)
   // Answer:
 }
-
-
-console.log(question3());
 
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  // Answer:
+  let wood = []
+  for (let i = 0; i < data.length; i++) {
+    let wood = data[i].materials.includes("wood")
+    let title = data[i].title
+    if (wood === "wood") {
+      wood.push(title)
+    }
+  }
+  console.log (wood)
 }
+
+
 
 
 // 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
 function question5 () {
-  // Answer:
+  let eightormore = []
+  for (let i = 0; i < data.length; i++) {
+    let materials = data[i].materials.length
+    if (data[i].materials.length >= 8) {
+      console.log(data[i].title + " has " + materials + " materials:" )
+      console.log(data[i].materials)
+    }
+
+  }
+
 }
 
 
