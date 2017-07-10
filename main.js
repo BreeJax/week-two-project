@@ -53,11 +53,9 @@ function question3 () {
 function question4 () {
   let wood = []
   for (let i = 0; i < data.length; i++) {
-    let wood = data[i].materials.includes("wood")
-    let title = data[i].title
-    if (wood === "wood") {
-      wood.push(title)
-    }
+      if( data[i].materials.includes("wood")) {
+        wood.push(data[i].title + " is made of wood.")
+      }
   }
   console.log (wood)
 }
